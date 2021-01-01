@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TodoApp());
+  runApp(LogoApp());
 }
 
-class TodoApp extends StatelessWidget {
+class LogoApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _LogoApp();
+  }
+}
+
+class _LogoApp extends State<LogoApp> {
+  List<String> frameworks = ["Flutter"];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,18 +26,24 @@ class TodoApp extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(8.0),
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() => frameworks.add("Android"));
+                },
                 child: Text("Add Picture"),
               ),
             ),
-            Card(
-              child: Column(
-                children: <Widget>[
-                  Image.asset("assets/flutter-logo.png"),
-                  Text("Do Flutter Application")
-                ],
-              ),
-            )
+            Column(
+              children: frameworks
+                  .map((item) => Card(
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset("assets/flutter-logo.png"),
+                            Text(item)
+                          ],
+                        ),
+                      ))
+                  .toList(),
+            ),
           ],
         ),
       ),
