@@ -12,6 +12,25 @@ class TodoApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Todo List'),
         ),
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.all(8.0),
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text("Add Picture"),
+              ),
+            ),
+            Card(
+              child: Column(
+                children: <Widget>[
+                  Image.asset("assets/flutter-logo.png"),
+                  Text("Do Flutter Application")
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
