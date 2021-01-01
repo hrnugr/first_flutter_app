@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'itemmanager.dart';
 
 void main() {
-  runApp(LogoApp());
+  runApp(App());
 }
 
-class LogoApp extends StatefulWidget {
+class App extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _LogoApp();
+    return _App();
   }
 }
 
-class _LogoApp extends State<LogoApp> {
-  List<String> frameworks = ["Flutter"];
-
+class _App extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,31 +20,7 @@ class _LogoApp extends State<LogoApp> {
         appBar: AppBar(
           title: Text('Todo List'),
         ),
-        body: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.all(8.0),
-              child: RaisedButton(
-                onPressed: () {
-                  setState(() => frameworks.add("Android"));
-                },
-                child: Text("Add Picture"),
-              ),
-            ),
-            Column(
-              children: frameworks
-                  .map((item) => Card(
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset("assets/flutter-logo.png"),
-                            Text(item)
-                          ],
-                        ),
-                      ))
-                  .toList(),
-            ),
-          ],
-        ),
+        body: ItemManager(),
       ),
     );
   }
