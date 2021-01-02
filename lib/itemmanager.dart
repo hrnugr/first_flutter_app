@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'items.dart';
+import 'itemaction.dart';
 
 class ItemManager extends StatefulWidget {
   String item;
@@ -19,19 +20,17 @@ class _ItemManager extends State<ItemManager> {
     frameworks.add(widget.item);
   }
 
+  void addItem(String item) {
+    setState(() => frameworks.add(item));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
           margin: EdgeInsets.all(8.0),
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              setState(() => frameworks.add("Android"));
-            },
-            child: Text("Add Picture"),
-          ),
+          child: ItemAction(addItem),
         ),
         Items(frameworks),
       ],
