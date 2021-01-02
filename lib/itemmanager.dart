@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'items.dart';
 
 class ItemManager extends StatefulWidget {
+  String item;
+  ItemManager({this.item = 'Default'});
   @override
   State<StatefulWidget> createState() {
-    return __ItemManager();
+    return _ItemManager();
   }
 }
 
-class __ItemManager extends State<ItemManager> {
-  List<String> frameworks = ["Flutter"];
+class _ItemManager extends State<ItemManager> {
+  List<String> frameworks = [];
+
+  @override
+  void initState() {
+    super.initState();
+    frameworks.add(widget.item);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +26,7 @@ class __ItemManager extends State<ItemManager> {
         Container(
           margin: EdgeInsets.all(8.0),
           child: RaisedButton(
+            color: Theme.of(context).primaryColor,
             onPressed: () {
               setState(() => frameworks.add("Android"));
             },

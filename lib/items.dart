@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Items extends StatelessWidget {
   List<String> frameworks;
-  Items(this.frameworks);
+  Items([this.frameworks = const []]);
 
   @override
   Widget build(BuildContext context) {
