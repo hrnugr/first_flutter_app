@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'itemmanager.dart';
+import './pages/home.dart';
 
 void main() {
   runApp(App());
@@ -18,12 +18,7 @@ class _App extends State<App> {
     return MaterialApp(
       theme:
           ThemeData(primarySwatch: Colors.green, brightness: Brightness.light),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Test List'),
-        ),
-        body: ItemManager(),
-      ),
+      home: HomePage(),
     );
   }
 }
