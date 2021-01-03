@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import '../itemmanager.dart';
 
-class HomePage extends StatelessWidget {
+class ItemDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Item List'),
+        title: Text("Item Detail"),
       ),
-      body: ItemManager(),
+      body: Center(
+        child: Text("Item Details..."),
+      ),
     );
   }
 }
