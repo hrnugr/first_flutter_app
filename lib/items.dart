@@ -15,9 +15,22 @@ class Items extends StatelessWidget {
     );
   }
 
+  Widget buildItemList() {
+    Widget card;
+    if (frameworks.length > 0) {
+      card = ListView.builder(
+          itemBuilder: itemBuilder, itemCount: frameworks.length);
+    } else {
+      card = Center(
+        child: Text("Item Not Found."),
+      );
+    }
+
+    return card;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemBuilder: itemBuilder, itemCount: frameworks.length);
+    return buildItemList();
   }
 }

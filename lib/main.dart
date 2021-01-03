@@ -13,7 +13,6 @@ class App extends StatefulWidget {
 }
 
 class _App extends State<App> {
-  String item = "Flutter";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,9 +20,9 @@ class _App extends State<App> {
           ThemeData(primarySwatch: Colors.green, brightness: Brightness.light),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Todo List'),
+          title: Text('Test List'),
         ),
-        body: ItemManager(item: item),
+        body: ItemManager(),
       ),
     );
   }

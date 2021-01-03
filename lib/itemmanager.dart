@@ -3,8 +3,6 @@ import 'items.dart';
 import 'itemaction.dart';
 
 class ItemManager extends StatefulWidget {
-  String item;
-  ItemManager({this.item = 'Default'});
   @override
   State<StatefulWidget> createState() {
     return _ItemManager();
@@ -17,7 +15,6 @@ class _ItemManager extends State<ItemManager> {
   @override
   void initState() {
     super.initState();
-    frameworks.add(widget.item);
   }
 
   void addItem(String item) {
