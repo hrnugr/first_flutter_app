@@ -32,7 +32,7 @@ class _ItemManager extends State<ItemManager> {
           margin: EdgeInsets.all(8.0),
           child: ItemAction(addItem),
         ),
-        Items(frameworks),
+        Expanded(child: Items(frameworks)),
       ],
     );
   }
