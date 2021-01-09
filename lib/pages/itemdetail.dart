@@ -23,8 +23,8 @@ class ItemDetail extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: RaisedButton(
               color: Theme.of(context).primaryColor,
-              child: Text("Back"),
-              onPressed: () => Navigator.pop(context),
+              child: Text("Delete Item"),
+              onPressed: () => Navigator.pop(context, true),
             ),
           ),
         ],

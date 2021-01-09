@@ -23,6 +23,10 @@ class _ItemManager extends State<ItemManager> {
     setState(() => frameworks.add(item));
   }
 
+  void deleteItem(Map<String, String> item) {
+    setState(() => frameworks.remove(item));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +36,7 @@ class _ItemManager extends State<ItemManager> {
           child: ItemAction(addItem),
         ),
         Expanded(
-          child: Items(frameworks),
+          child: Items(frameworks, deleteItem: deleteItem),
         ),
       ],
     );

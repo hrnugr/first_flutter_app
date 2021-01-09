@@ -3,7 +3,8 @@ import './pages/itemdetail.dart';
 
 class Items extends StatelessWidget {
   final List<Map<String, String>> items;
-  Items([this.items = const []]);
+  final Function deleteItem;
+  Items(this.items, {this.deleteItem});
 
   Widget itemBuilder(BuildContext context, int index) {
     return Card(
@@ -17,10 +18,12 @@ class Items extends StatelessWidget {
               FlatButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<bool>(
                     builder: (BuildContext context) => ItemDetail(items[index]),
                   ),
-                ),
+                ).then((bool value) => {
+                      if (value) {deleteItem(items[index])}
+                    }),
                 child: Text("Go to Detail"),
               )
             ],
