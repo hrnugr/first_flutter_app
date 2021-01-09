@@ -3,6 +3,8 @@ import 'items.dart';
 import 'itemaction.dart';
 
 class ItemManager extends StatefulWidget {
+  final Map<String, String> frameworks;
+  ItemManager({this.frameworks});
   @override
   State<StatefulWidget> createState() {
     return _ItemManager();
@@ -10,14 +12,14 @@ class ItemManager extends StatefulWidget {
 }
 
 class _ItemManager extends State<ItemManager> {
-  List<String> frameworks = [];
+  List<Map<String, String>> frameworks = [];
 
   @override
   void initState() {
     super.initState();
   }
 
-  void addItem(String item) {
+  void addItem(Map<String, String> item) {
     setState(() => frameworks.add(item));
   }
 

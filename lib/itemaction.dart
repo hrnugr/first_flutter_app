@@ -8,7 +8,7 @@ class ItemAction extends StatelessWidget {
     return RaisedButton(
       color: Theme.of(context).primaryColor,
       onPressed: () {
-        addItem("Android");
+        addItem({"title": "flutter", "img": "assets/flutter-logo.png"});
       },
       child: Text("Add Picture"),
     );

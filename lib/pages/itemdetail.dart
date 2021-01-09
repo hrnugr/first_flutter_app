@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ItemDetail extends StatelessWidget {
+  Map<String, String> item;
+  ItemDetail(this.item);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,10 +14,10 @@ class ItemDetail extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/flutter-logo.png"),
+          Image.asset(item["img"]),
           Container(
             padding: EdgeInsets.all(8.0),
-            child: Text("Item Detail"),
+            child: Text(item["title"]),
           ),
           Container(
             padding: EdgeInsets.all(8.0),
