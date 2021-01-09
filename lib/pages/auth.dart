@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/home.dart';
-import 'home.dart';
+//import 'package:my_app/pages/home.dart';
+//import 'home.dart';
 
 class Auth extends StatelessWidget {
   @override
@@ -11,13 +11,13 @@ class Auth extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
+          color: Theme.of(context).primaryColor,
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => HomePage(),
-              ),
-            );
+            Navigator.pushReplacementNamed(context, "/home"
+                // MaterialPageRoute(
+                //   builder: (BuildContext context) => HomePage(),
+                // ),
+                );
           },
           child: Text("Login"),
         ),

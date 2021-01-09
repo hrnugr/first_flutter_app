@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/home.dart';
+//import 'package:my_app/pages/home.dart';
 
 import './edit.dart';
 import './delete.dart';
@@ -20,12 +20,11 @@ class Settings extends StatelessWidget {
               ListTile(
                 title: Text("Home"),
                 onTap: () => {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => HomePage(),
-                    ),
-                  )
+                  Navigator.pushReplacementNamed(context, "/home"
+                      //   MaterialPageRoute(
+                      //     builder: (BuildContext context) => HomePage(),
+                      //   ),
+                      )
                 },
               )
             ],

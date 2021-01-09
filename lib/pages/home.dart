@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../itemmanager.dart';
-import '../pages/settings.dart';
+//import '../pages/settings.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -16,12 +16,11 @@ class HomePage extends StatelessWidget {
             ListTile(
               title: Text("Settings"),
               onTap: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => Settings(),
-                  ),
-                )
+                Navigator.pushReplacementNamed(context, "/settings"
+                    // MaterialPageRoute(
+                    //   builder: (BuildContext context) => Settings(),
+                    //),
+                    ),
               },
             ),
           ],
