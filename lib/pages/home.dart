@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../itemmanager.dart';
+import '../pages/settings.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,8 +14,15 @@ class HomePage extends StatelessWidget {
               automaticallyImplyLeading: false,
             ),
             ListTile(
-              title: Text("Choice 1"),
-              onTap: () => {},
+              title: Text("Settings"),
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Settings(),
+                  ),
+                )
+              },
             ),
           ],
         ),
