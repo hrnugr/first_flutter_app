@@ -5,7 +5,20 @@ class EditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Edit page"),
+        child: RaisedButton(
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return Center(
+                    child: Text("Modal Example"),
+                  );
+                });
+          },
+          color: Theme.of(context).primaryColor,
+          textColor: Colors.white,
+          child: Text("Modal"),
+        ),
       ),
     );
   }
