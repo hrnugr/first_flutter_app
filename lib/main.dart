@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/auth.dart';
 import 'package:my_app/pages/settings.dart';
 import 'package:my_app/pages/home.dart';
-import 'package:my_app/pages/itemdetail.dart';
+//import 'package:my_app/pages/itemdetail.dart';
 
 void main() {
   runApp(App());
@@ -30,12 +30,13 @@ class _App extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme:
-          ThemeData(primarySwatch: Colors.green, brightness: Brightness.light),
+          ThemeData(primarySwatch: Colors.purple, brightness: Brightness.light),
       home: Auth(),
       routes: {
         "/home": (BuildContext context) => HomePage(items, addItem, deleteItem),
         "/settings": (BuildContext context) => Settings()
       },
+      /*
       onGenerateRoute: (RouteSettings settings) {
         final List<String> pathElementList = settings.name.split("/");
         final int index = int.parse(pathElementList[2]);
@@ -58,6 +59,7 @@ class _App extends State<App> {
                 HomePage(items, addItem, deleteItem),
             settings: settings);
       },
+      */
     );
   }
 }

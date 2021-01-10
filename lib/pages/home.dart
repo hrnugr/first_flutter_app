@@ -3,9 +3,9 @@ import '../itemmanager.dart';
 //import '../pages/settings.dart';
 
 class HomePage extends StatelessWidget {
-  Function addItem;
-  Function deleteItem;
-  List<Map<String, String>> items;
+  final Function addItem;
+  final Function deleteItem;
+  final List<Map<String, String>> items;
   HomePage(this.items, this.addItem, this.deleteItem);
 
   @override

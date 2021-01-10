@@ -6,6 +6,7 @@ class ItemAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
+      textColor: Colors.white,
       color: Theme.of(context).primaryColor,
       onPressed: () {
         addItem({"title": "flutter", "img": "assets/flutter-logo.png"});
