@@ -3,6 +3,11 @@ import '../itemmanager.dart';
 //import '../pages/settings.dart';
 
 class HomePage extends StatelessWidget {
+  Function addItem;
+  Function deleteItem;
+  List<Map<String, String>> items;
+  HomePage(this.items, this.addItem, this.deleteItem);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Item List'),
       ),
-      body: ItemManager(),
+      body: ItemManager(this.items, this.addItem, this.deleteItem),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './pages/itemdetail.dart';
 
 class Items extends StatelessWidget {
   final List<Map<String, String>> items;
@@ -16,14 +15,16 @@ class Items extends StatelessWidget {
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute<bool>(
-                    builder: (BuildContext context) => ItemDetail(items[index]),
-                  ),
-                ).then((bool value) => {
-                      if (value) {deleteItem(items[index])}
-                    }),
+                color: Theme.of(context).primaryColor,
+                onPressed: () => Navigator.pushNamed<bool>(
+                        context, "/item/" + index.toString()
+                        //  MaterialPageRoute<bool>(
+                        //    builder: (BuildContext context) => ItemDetail(items[index]),
+                        //  ),
+                        )
+                    .then((bool value) => {
+                          if (value) {deleteItem(items[index])}
+                        }),
                 child: Text("Go to Detail"),
               )
             ],

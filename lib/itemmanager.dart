@@ -2,30 +2,11 @@ import 'package:flutter/material.dart';
 import 'items.dart';
 import 'itemaction.dart';
 
-class ItemManager extends StatefulWidget {
-  final Map<String, String> frameworks;
-  ItemManager({this.frameworks});
-  @override
-  State<StatefulWidget> createState() {
-    return _ItemManager();
-  }
-}
-
-class _ItemManager extends State<ItemManager> {
-  List<Map<String, String>> frameworks = [];
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  void addItem(Map<String, String> item) {
-    setState(() => frameworks.add(item));
-  }
-
-  void deleteItem(Map<String, String> item) {
-    setState(() => frameworks.remove(item));
-  }
+class ItemManager extends StatelessWidget {
+  final List<Map<String, String>> items;
+  final Function addItem;
+  final Function deleteItem;
+  ItemManager(this.items, this.addItem, this.deleteItem);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +17,7 @@ class _ItemManager extends State<ItemManager> {
           child: ItemAction(addItem),
         ),
         Expanded(
-          child: Items(frameworks, deleteItem: deleteItem),
+          child: Items(items, deleteItem: deleteItem),
         ),
       ],
     );
