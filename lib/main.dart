@@ -52,6 +52,12 @@ class _App extends State<App> {
 
         return null;
       },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+            builder: (BuildContext context) =>
+                HomePage(items, addItem, deleteItem),
+            settings: settings);
+      },
     );
   }
 }
