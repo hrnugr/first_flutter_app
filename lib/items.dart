@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './pages/itemdetail.dart';
+import 'pages/detail.dart';
 
 class Items extends StatelessWidget {
   final List<Map<String, String>> items;

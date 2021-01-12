@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/create.dart';
 //import 'package:my_app/pages/home.dart';
 
 import './edit.dart';
@@ -8,7 +9,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         drawer: Drawer(
           child: Column(
@@ -35,17 +36,22 @@ class Settings extends StatelessWidget {
           bottom: TabBar(
             tabs: [
               Tab(
-                text: "Edit",
+                text: "Create",
                 icon: Icon(Icons.create),
+              ),
+              Tab(
+                text: "Edit",
+                icon: Icon(Icons.edit),
               ),
               Tab(
                 text: "Delete",
                 icon: Icon(Icons.delete),
-              )
+              ),
             ],
           ),
         ),
         body: TabBarView(children: [
+          CreatePage(),
           EditPage(),
           DeletePage(),
         ]),
