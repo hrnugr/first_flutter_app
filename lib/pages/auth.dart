@@ -13,6 +13,7 @@ class Auth extends StatefulWidget {
 class _Auth extends State<Auth> {
   String username;
   String password;
+  bool isRememberMe = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +38,15 @@ class _Auth extends State<Auth> {
               onChanged: (String value) {
                 setState(() {
                   password = value;
+                });
+              },
+            ),
+            SwitchListTile(
+              title: Text("Remember Me?"),
+              value: isRememberMe,
+              onChanged: (bool value) {
+                setState(() {
+                  isRememberMe = value;
                 });
               },
             ),

@@ -32,6 +32,9 @@ class _CreatePage extends State<CreatePage> {
                 description = value;
               },
             ),
+            SizedBox(
+              height: 10.0,
+            ),
             RaisedButton(
               child: Text("Create"),
               color: Theme.of(context).primaryColor,
