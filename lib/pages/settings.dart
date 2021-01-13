@@ -6,6 +6,9 @@ import './edit.dart';
 import './delete.dart';
 
 class Settings extends StatelessWidget {
+  final Function addItem;
+  Settings(this.addItem);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -50,8 +53,8 @@ class Settings extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(children: [
-          CreatePage(),
+        body: TabBarView(children: <Widget>[
+          CreatePage(addItem),
           EditPage(),
           DeletePage(),
         ]),

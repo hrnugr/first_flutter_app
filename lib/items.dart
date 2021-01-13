@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'pages/detail.dart';
 
 class Items extends StatelessWidget {
-  final List<Map<String, String>> items;
-  final Function deleteItem;
-  Items(this.items, {this.deleteItem});
+  final List<Map<String, dynamic>> items;
+  Items(this.items);
 
   Widget itemBuilder(BuildContext context, int index) {
     return Card(
@@ -24,9 +23,7 @@ class Items extends StatelessWidget {
                   MaterialPageRoute<bool>(
                     builder: (BuildContext context) => ItemDetail(items[index]),
                   ),
-                ).then((bool value) => {
-                      if (value) {deleteItem(items[index])}
-                    }),
+                ),
                 child: Text("Go to Detail"),
               )
             ],

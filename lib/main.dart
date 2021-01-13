@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/auth.dart';
 import 'package:my_app/pages/settings.dart';
 import 'package:my_app/pages/home.dart';
-//import 'package:my_app/pages/itemdetail.dart';
+import './pages/detail.dart';
 
 void main() {
   runApp(App());
@@ -16,13 +16,13 @@ class App extends StatefulWidget {
 }
 
 class _App extends State<App> {
-  final List<Map<String, String>> items = [];
+  final List<Map<String, dynamic>> items = [];
 
-  void addItem(Map<String, String> item) {
+  void addItem(Map<String, dynamic> item) {
     setState(() => items.add(item));
   }
 
-  void deleteItem(Map<String, String> item) {
+  void deleteItem(Map<String, dynamic> item) {
     setState(() => items.remove(item));
   }
 
@@ -33,10 +33,9 @@ class _App extends State<App> {
           ThemeData(primarySwatch: Colors.purple, brightness: Brightness.light),
       home: Auth(),
       routes: {
-        "/home": (BuildContext context) => HomePage(items, addItem, deleteItem),
-        "/settings": (BuildContext context) => Settings()
+        "/home": (BuildContext context) => HomePage(items),
+        "/settings": (BuildContext context) => Settings(addItem)
       },
-      /*
       onGenerateRoute: (RouteSettings settings) {
         final List<String> pathElementList = settings.name.split("/");
         final int index = int.parse(pathElementList[2]);
@@ -45,7 +44,7 @@ class _App extends State<App> {
           return null;
         }
 
-        if (pathElementList[1] == "item") {
+        if (pathElementList[1] == "car") {
           return MaterialPageRoute<bool>(
             builder: (BuildContext context) => ItemDetail(items[index]),
           );
@@ -55,11 +54,9 @@ class _App extends State<App> {
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-            builder: (BuildContext context) =>
-                HomePage(items, addItem, deleteItem),
+            builder: (BuildContext context) => HomePage(items),
             settings: settings);
       },
-      */
     );
   }
 }

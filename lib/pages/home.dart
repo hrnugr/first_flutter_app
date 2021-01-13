@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import '../itemmanager.dart';
-//import '../pages/settings.dart';
+import '../items.dart';
 
 class HomePage extends StatelessWidget {
-  final Function addItem;
-  final Function deleteItem;
-  final List<Map<String, String>> items;
-  HomePage(this.items, this.addItem, this.deleteItem);
+  final List<Map<String, dynamic>> items;
+  HomePage(this.items);
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +18,7 @@ class HomePage extends StatelessWidget {
             ListTile(
               title: Text("Settings"),
               onTap: () => {
-                Navigator.pushReplacementNamed(context, "/settings"
-                    // MaterialPageRoute(
-                    //   builder: (BuildContext context) => Settings(),
-                    //),
-                    ),
+                Navigator.pushReplacementNamed(context, "/settings"),
               },
             ),
           ],
@@ -34,7 +27,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Item List'),
       ),
-      body: ItemManager(this.items, this.addItem, this.deleteItem),
+      body: Items(items),
     );
   }
 }

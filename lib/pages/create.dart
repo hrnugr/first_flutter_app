@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CreatePage extends StatefulWidget {
+  final Function addItem;
+  CreatePage(this.addItem);
   @override
   State<StatefulWidget> createState() {
     return _CreatePage();
   }
 }
 
-class _CreatePage extends State<StatefulWidget> {
+class _CreatePage extends State<CreatePage> {
   String title;
   String description;
 
@@ -34,6 +36,12 @@ class _CreatePage extends State<StatefulWidget> {
               child: Text("Create"),
               color: Theme.of(context).primaryColor,
               onPressed: () {
+                final Map<String, dynamic> item = {
+                  'title': title,
+                  'description': description,
+                  "img": "assets/flutter-logo.png"
+                };
+                widget.addItem(item);
                 Navigator.pushNamed(context, "/home");
               },
             ),

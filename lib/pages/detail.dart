@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ItemDetail extends StatelessWidget {
-  final Map<String, String> item;
+  final Map<String, dynamic> item;
   ItemDetail(this.item);
 
   void deleteItemAlert(BuildContext context) {
